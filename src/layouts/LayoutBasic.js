@@ -6,7 +6,7 @@ import "./LayoutBasic.scss";
 
 export default function LayoutAdmin(props) {
   const { routes } = props;
-  const { Content, Footer } = Layout;
+  const { Content } = Layout;
   return (
     <Layout>
       <h2>Menu...</h2>
