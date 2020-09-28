@@ -1,4 +1,5 @@
 import React from "react";
+import { logout } from "../../../api/auth";
 import { Button } from "antd";
 import {
   MenuFoldOutlined,
@@ -11,6 +12,10 @@ import "./MenuTop.scss";
 
 export default function MenuTop(props) {
   const { menuCollapsed, setMenuCollapsed } = props;
+  const logoutUser = () => {
+    logout();
+    window.location.reload();
+  };
   return (
     <div className="menu-top">
       <div className="menu-top__left">
@@ -23,10 +28,7 @@ export default function MenuTop(props) {
           {menuCollapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>
-      <div
-        className="menu-top__right"
-        onClick={() => console.log("Desconexión")}
-      >
+      <div className="menu-top__right" onClick={logoutUser}>
         <Button type="link">
           <PoweroffOutlined />
         </Button>
